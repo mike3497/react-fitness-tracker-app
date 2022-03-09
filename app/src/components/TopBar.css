@@ -1,0 +1,15 @@
+.top-bar {
+	background-color: #fff;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 62px;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.top-bar h3 {
+	margin-left: 12px;
+}
