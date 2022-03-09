@@ -8,10 +8,11 @@ const workout = mongoose.Schema(
 		},
 		endTime: {
 			type: Date,
-			required: true,
 		},
 		exercises: {
-			type: [String],
+			type: [
+				{ type: mongoose.Schema.ObjectId, ref: 'Workout-Line-Item' },
+			],
 		},
 	},
 	{ timestamps: true }

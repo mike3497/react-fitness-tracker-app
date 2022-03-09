@@ -3,16 +3,12 @@ const mongoose = require('mongoose');
 const workoutLineItem = mongoose.Schema(
 	{
 		exercise: {
-			type: String,
+			type: mongoose.Schema.ObjectId,
+			ref: 'Exercise',
 			required: true,
 		},
-		reps: {
-			type: Number,
-			required: true,
-		},
-		weight: {
-			type: Number,
-			required: true,
+		sets: {
+			type: [{ type: mongoose.Schema.ObjectId, ref: 'Set' }],
 		},
 	},
 	{ timestamps: true }

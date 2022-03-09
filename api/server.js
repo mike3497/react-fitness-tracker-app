@@ -31,4 +31,5 @@ app.use(
 	require('./routes/exercise-category.route')
 );
 app.use('/api/workouts', require('./routes/workout.route'));
-app.use('/api/workout-line-items', require('./routes/workout-line-item.route'));
+app.use('/api/workoutLineItems', require('./routes/workout-line-item.route'));
+app.use('/api/sets', require('./routes/set.route'));

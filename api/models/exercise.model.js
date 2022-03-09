@@ -6,8 +6,10 @@ const excercise = mongoose.Schema(
 			type: String,
 			required: true,
 		},
-		category: {
-			type: [String],
+		categories: {
+			type: [
+				{ type: mongoose.Schema.ObjectId, ref: 'Exercise-Category' },
+			],
 			required: true,
 		},
 	},
