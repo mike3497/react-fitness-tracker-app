@@ -14,6 +14,10 @@ const workout = mongoose.Schema(
 				{ type: mongoose.Schema.ObjectId, ref: 'Workout-Line-Item' },
 			],
 		},
+		inProgress: {
+			type: Boolean,
+			default: true,
+		},
 	},
 	{ timestamps: true }
 );

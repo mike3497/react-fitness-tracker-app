@@ -45,6 +45,7 @@ module.exports.stopWorkout = async (req, res) => {
 		}
 
 		workout.endTime = Date.now();
+		workout.inProgress = false;
 
 		const result = await workout.save();
 		if (!result) {
