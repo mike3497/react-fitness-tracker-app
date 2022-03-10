@@ -15,7 +15,7 @@ module.exports.getAll = async (req, res) => {
 module.exports.getDetails = async (req, res) => {
 	try {
 		const workout = await Workout.findOne({ _id: req.params.id }).populate({
-			path: 'exercises',
+			path: 'workoutExercises',
 			populate: [
 				{
 					path: 'exercise',
@@ -94,7 +94,8 @@ module.exports.delete = async (req, res) => {
 				result: `Workout does not exist.`,
 			});
 		}
-		const result = await workout.delete();
+
+		const result = await Workout.deleteOne({ _id: workout._id });
 
 		return res.json({ success: true, result });
 	} catch (error) {

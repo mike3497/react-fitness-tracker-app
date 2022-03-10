@@ -13,7 +13,7 @@ router.post('/start', (req, res) => {
 	controller.start(req, res);
 });
 
-router.put('/stop/:id', (req, res) => {
+router.post('/stop/:id', (req, res) => {
 	controller.stop(req, res);
 });
 
