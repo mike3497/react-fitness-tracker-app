@@ -17,7 +17,7 @@ function AddExercise() {
 	return (
 		<React.Fragment>
 			<TopBar />
-			<main class="content-body">
+			<main class="content-body container">
 				<ExerciseList />
 			</main>
 			<BottomBar>

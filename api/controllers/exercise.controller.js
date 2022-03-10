@@ -80,10 +80,12 @@ module.exports.exists = async (req, res) => {
 
 module.exports.getAll = async (req, res) => {
 	try {
-		const result = await Exercise.find({}, {}, {});
+		const result = await Exercise.find({}, {}, {}).populate('categories');
 
-		return res.status(200).json(result);
+		return res.json({ success: true, result });
 	} catch (exception) {
-		return res.status(400).json(exception);
+		return res
+			.status(400)
+			.json({ success: false, error: error.toString() });
 	}
 };

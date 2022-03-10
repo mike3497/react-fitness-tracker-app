@@ -13,6 +13,7 @@ function WorkoutListItem(props) {
 	const handleGoToWorkout = (e) => {
 		const workoutId = e.currentTarget.dataset.workoutId;
 		context.changeWorkoutId(workoutId);
+		navigate('/workout');
 	};
 
 	const getFormattedTime = (startTime, endTime) => {
