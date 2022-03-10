@@ -1,28 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './WorkoutList.css';
 import WorkoutListItem from './WorkoutListItem';
+import axios from 'axios';
 
 function WorkoutList() {
-	const workouts = [
-		{
-			_id: 1,
-			startTime: '3/9/2020',
-			totalTime: '30:59',
-			inProgress: true,
-		},
-		{
-			_id: 2,
-			startTime: '3/9/2020',
-			totalTime: '30:59',
-			inProgress: false,
-		},
-		{
-			_id: 3,
-			startTime: '3/9/2020',
-			totalTime: '30:59',
-			inProgress: false,
-		},
-	];
+	const [workouts, setWorkouts] = useState([]);
+
+	useEffect(() => {
+		axios
+			.get('http://localhost:8080/api/workouts/getAll')
+			.then((response) => {
+				setWorkouts(response.data);
+			});
+	}, []);
 
 	return (
 		<div>
