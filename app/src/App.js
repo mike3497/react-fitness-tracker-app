@@ -1,7 +1,8 @@
-import Home from './pages/Home';
-import Workout from './pages/Workout';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AppContextProvider } from './store/app-context';
+import Home from './pages/Home';
+import Workout from './pages/Workout';
+import AddExercise from './pages/AddExercise';
 
 function App() {
 	return (
@@ -10,6 +11,7 @@ function App() {
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/workout" element={<Workout />} />
+					<Route path="/addExercise" element={<AddExercise />} />
 				</Routes>
 			</BrowserRouter>
 		</AppContextProvider>

@@ -6,20 +6,20 @@ export const AppContextProvider = (props) => {
 	const initalWorkoutId = localStorage.getItem('workoutId');
 	const [workoutId, setWorkoutId] = useState(initalWorkoutId);
 
-	const startWorkout = (workoutId) => {
+	const changeWorkoutId = (workoutId) => {
 		setWorkoutId(workoutId);
 		localStorage.setItem('workoutId', workoutId);
 	};
 
-	const stopWorkout = (workoutId) => {
+	const removeWorkoutId = (workoutId) => {
 		setWorkoutId(null);
 		localStorage.removeItem('workoutId');
 	};
 
 	const contextValue = {
 		workoutId,
-		startWorkout: startWorkout,
-		stopWorkout: stopWorkout,
+		changeWorkoutId: changeWorkoutId,
+		removeWorkoutId: removeWorkoutId,
 	};
 
 	return (
