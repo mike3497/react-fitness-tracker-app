@@ -4,7 +4,7 @@ module.exports.getAll = async (req, res) => {
 	try {
 		const result = await Workout.find({}, {}, {});
 
-		return res.status(200).json(result);
+		return res.json({ success: true, result });
 	} catch (exception) {
 		return res
 			.status(400)
@@ -12,7 +12,32 @@ module.exports.getAll = async (req, res) => {
 	}
 };
 
-module.exports.startWorkout = async (req, res) => {
+module.exports.getDetails = async (req, res) => {
+	try {
+		const workout = await Workout.findOne({ _id: req.params.id }).populate({
+			path: 'exercises',
+			populate: [
+				{
+					path: 'exercise',
+					populate: {
+						path: 'categories',
+					},
+				},
+				{
+					path: 'sets',
+				},
+			],
+		});
+
+		return res.json({ success: true, result: workout });
+	} catch (error) {
+		return res
+			.status(400)
+			.json({ success: false, error: error.toString() });
+	}
+};
+
+module.exports.start = async (req, res) => {
 	try {
 		const workout = new Workout({
 			startTime: Date.now(),
@@ -27,7 +52,7 @@ module.exports.startWorkout = async (req, res) => {
 	}
 };
 
-module.exports.stopWorkout = async (req, res) => {
+module.exports.stop = async (req, res) => {
 	try {
 		const workout = await Workout.findById(req.params.id);
 		if (!workout) {
@@ -60,24 +85,18 @@ module.exports.stopWorkout = async (req, res) => {
 	}
 };
 
-module.exports.getDetails = async (req, res) => {
+module.exports.delete = async (req, res) => {
 	try {
-		const workout = await Workout.findOne({ _id: req.params.id }).populate({
-			path: 'exercises',
-			populate: [
-				{
-					path: 'exercise',
-					populate: {
-						path: 'categories',
-					},
-				},
-				{
-					path: 'sets',
-				},
-			],
-		});
+		const workout = await Workout.findById(req.params.id);
+		if (!workout) {
+			return res.json({
+				success: false,
+				result: `Workout does not exist.`,
+			});
+		}
+		const result = await workout.delete();
 
-		return res.json({ success: true, workout });
+		return res.json({ success: true, result });
 	} catch (error) {
 		return res
 			.status(400)
