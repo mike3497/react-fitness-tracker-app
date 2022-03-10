@@ -14,7 +14,7 @@ router.post('/start', (req, res) => {
 });
 
 router.put('/stop/:id', (req, res) => {
-	controller.stopWorkout(req, res);
+	controller.stop(req, res);
 });
 
 router.delete('/:id', (req, res) => {
