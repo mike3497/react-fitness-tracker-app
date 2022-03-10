@@ -8,6 +8,10 @@
 	height: 62px;
 }
 
+.top-bar h6 {
+	padding: 22px 0px;
+}
+
 .top-bar__body {
 	padding-left: 12px;
 	padding-right: 12px;

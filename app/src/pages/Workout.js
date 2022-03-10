@@ -7,12 +7,10 @@ import BottomBar from '../components/BottomBar';
 import TopBar from '../components/TopBar';
 import Button from '../components/ui/Button';
 import ButtonFullWidth from '../components/ui/ButtonFullWidth';
-import ExerciseItem from '../components/ExerciseItem';
+import WorkoutLineItemList from '../components/WorkoutLineItemList';
 
 function Workout() {
 	const context = useContext(AppContext);
-	const workoutId = context.workoutId;
-	console.log(context);
 	let navigate = useNavigate();
 
 	const handleFinish = () => {
@@ -24,7 +22,7 @@ function Workout() {
 				const data = response.data;
 
 				if (data.success) {
-					context.stopWorkout();
+					context.removeWorkoutId();
 					navigate('/');
 				}
 			})
@@ -32,23 +30,24 @@ function Workout() {
 				console.error(error);
 			});
 	};
-	const handleAddExercise = () => {};
+
+	const handleAddExercise = () => {
+		navigate('/addExercise');
+	};
 
 	return (
 		<div>
 			<TopBar>
-				<Button onClick={handleFinish}>Finish</Button>
+				<Button onClick={handleFinish}>
+					<i class="fa-solid fa-flag-checkered"></i> Finish
+				</Button>
 			</TopBar>
-			<div className="workout__body container">
-				<div className="row">
-					<div className="col-12">
-						<ExerciseItem />
-					</div>
-				</div>
-			</div>
+			<main className="content-body">
+				<WorkoutLineItemList />
+			</main>
 			<BottomBar>
 				<ButtonFullWidth onClick={handleAddExercise}>
-					Add Exercise
+					<i class="fa-solid fa-dumbbell"></i> Add Exercise
 				</ButtonFullWidth>
 			</BottomBar>
 		</div>

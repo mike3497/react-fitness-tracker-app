@@ -1,0 +1,43 @@
+.workout-list-item {
+	background-color: #fff;
+	padding: 12px;
+	border-radius: 24px;
+	margin-bottom: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70px;
+}
+
+.workout-list-item__date {
+	margin: 0px 0px 8px 0px;
+	padding: 0px;
+}
+
+.workout-list-item__time {
+	margin: 0px;
+	padding: 0px;
+}
+
+.workout-list-item__button {
+	width: 46px;
+	height: 46px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #3772ff;
+	border: none;
+	border-radius: 50%;
+	text-decoration: none;
+	margin-left: auto;
+}
+
+.workout-list-item__button:hover {
+	filter: brightness(80%);
+}
+
+.workout-list-item__button i {
+	font-size: 14px;
+	line-height: 1em;
+	color: white;
+}

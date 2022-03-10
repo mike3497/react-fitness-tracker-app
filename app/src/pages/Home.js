@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import './Home.css';
-import TopBar from '../components/TopBar';
-import BottomBar from '../components/BottomBar';
+import AppContext from '../store/app-context';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import TopBar from '../components/TopBar';
+import BottomBar from '../components/BottomBar';
 import ButtonFullWidth from '../components/ui/ButtonFullWidth';
-import AppContext from '../store/app-context';
+import WorkoutList from '../components/WorkoutList';
 
 function Home() {
 	const context = useContext(AppContext);
@@ -19,7 +20,7 @@ function Home() {
 
 				if (data.success) {
 					const workoutId = data.result._id;
-					context.startWorkout(workoutId);
+					context.changeWorkoutId(workoutId);
 					navigate('/workout');
 				}
 			})
@@ -31,9 +32,12 @@ function Home() {
 	return (
 		<div>
 			<TopBar />
+			<main className="content-body container">
+				<WorkoutList />
+			</main>
 			<BottomBar>
 				<ButtonFullWidth onClick={handleStartWorkout}>
-					Start Workout
+					<i class="fa-solid fa-person-running"></i> Start Workout
 				</ButtonFullWidth>
 			</BottomBar>
 		</div>
