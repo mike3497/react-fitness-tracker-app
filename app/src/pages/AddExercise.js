@@ -17,12 +17,12 @@ function AddExercise() {
 	return (
 		<React.Fragment>
 			<TopBar />
-			<main class="content-body container">
+			<main className="content-body container">
 				<ExerciseList />
 			</main>
 			<BottomBar>
 				<ButtonFullWidth onClick={handleGoBack}>
-					<i class="fa-solid fa-chevron-left"></i> Back
+					<i className="fa-solid fa-chevron-left"></i> Back
 				</ButtonFullWidth>
 			</BottomBar>
 		</React.Fragment>

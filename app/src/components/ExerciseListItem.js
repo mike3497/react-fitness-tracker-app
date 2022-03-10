@@ -21,7 +21,7 @@ function ExerciseListItem(props) {
 				type="button"
 				data-exercise-id={exercise._id}
 			>
-				<i class="fa-solid fa-plus"></i>
+				<i className="fa-solid fa-plus"></i>
 			</button>
 		</div>
 	);

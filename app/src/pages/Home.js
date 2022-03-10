@@ -37,7 +37,7 @@ function Home() {
 			</main>
 			<BottomBar>
 				<ButtonFullWidth onClick={handleStartWorkout}>
-					<i class="fa-solid fa-person-running"></i> Start Workout
+					<i className="fa-solid fa-person-running"></i> Start Workout
 				</ButtonFullWidth>
 			</BottomBar>
 		</div>

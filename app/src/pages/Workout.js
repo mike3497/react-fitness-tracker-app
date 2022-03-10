@@ -39,7 +39,7 @@ function Workout() {
 		<div>
 			<TopBar>
 				<Button onClick={handleFinish}>
-					<i class="fa-solid fa-flag-checkered"></i> Finish
+					<i className="fa-solid fa-flag-checkered"></i> Finish
 				</Button>
 			</TopBar>
 			<main className="content-body">
@@ -47,7 +47,7 @@ function Workout() {
 			</main>
 			<BottomBar>
 				<ButtonFullWidth onClick={handleAddExercise}>
-					<i class="fa-solid fa-dumbbell"></i> Add Exercise
+					<i className="fa-solid fa-dumbbell"></i> Add Exercise
 				</ButtonFullWidth>
 			</BottomBar>
 		</div>

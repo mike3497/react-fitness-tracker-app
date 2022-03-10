@@ -72,7 +72,7 @@ function WorkoutListItem(props) {
 					onClick={handleGoToWorkout}
 					data-workout-id={workout._id}
 				>
-					<i class="fa-solid fa-chevron-right"></i>
+					<i className="fa-solid fa-chevron-right"></i>
 				</button>
 			)}
 
@@ -83,7 +83,7 @@ function WorkoutListItem(props) {
 					onClick={handleGoToWorkout}
 					data-workout-id={workout._id}
 				>
-					<i class="fa-solid fa-eye"></i>
+					<i className="fa-solid fa-eye"></i>
 				</button>
 			)}
 		</div>
