@@ -11,7 +11,7 @@ function ExerciseListItem(props) {
 				<h6 className="exercise-list-item__name">{exercise.name}</h6>
 				<p className="exercise-list-item__categories">
 					{exercise.categories.map((category) => (
-						<span>{category.name}</span>
+						<span key={category._id}>{category.name}</span>
 					))}
 				</p>
 			</div>
