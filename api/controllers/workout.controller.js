@@ -24,7 +24,7 @@ module.exports.getDetails = async (req, res) => {
 					},
 				},
 				{
-					path: 'sets',
+					path: 'workoutSets',
 				},
 			],
 		});

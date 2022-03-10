@@ -32,4 +32,4 @@ app.use(
 );
 app.use('/api/workouts', require('./routes/workout.route'));
 app.use('/api/workout-exercises', require('./routes/workout-exercise.route'));
-app.use('/api/sets', require('./routes/set.route'));
+app.use('/api/exercise-sets', require('./routes/exercise-set.route'));

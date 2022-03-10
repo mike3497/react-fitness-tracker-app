@@ -1,7 +1,6 @@
 const WorkoutExercise = require('../models/workout-exercise.model');
 const Workout = require('../models/workout.model');
 const Exercise = require('../models/exercise.model');
-const Set = require('../models/set.model');
 
 module.exports.addExercise = async (req, res) => {
 	try {
