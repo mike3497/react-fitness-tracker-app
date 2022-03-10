@@ -1,5 +1,17 @@
 const Workout = require('../models/workout.model');
 
+module.exports.getAll = async (req, res) => {
+	try {
+		const result = await Workout.find({}, {}, {});
+
+		return res.status(200).json(result);
+	} catch (exception) {
+		return res
+			.status(400)
+			.json({ success: false, error: error.toString() });
+	}
+};
+
 module.exports.startWorkout = async (req, res) => {
 	try {
 		const workout = new Workout({

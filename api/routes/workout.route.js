@@ -1,6 +1,10 @@
 const router = require('express').Router();
 const controller = require('../controllers/workout.controller');
 
+router.get('/getAll', (req, res) => {
+	controller.getAll(req, res);
+});
+
 router.post('/startWorkout', (req, res) => {
 	controller.startWorkout(req, res);
 });
