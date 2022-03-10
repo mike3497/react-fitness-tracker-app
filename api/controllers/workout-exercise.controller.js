@@ -25,28 +25,38 @@ module.exports.addExercise = async (req, res) => {
 			});
 		}
 
-		// Find workout line item with that exercise
-		const workoutExercise = await WorkoutExercise.findOne({
-			exercise: exerciseId,
-		});
-
-		if (workoutExercise) {
-			return res.json({
-				success: false,
-				result: `WorkoutExercise already exists with that exercise.`,
-			});
-		}
-
 		const newWorkoutExercise = new WorkoutExercise({
 			exercise: exerciseId,
 		});
 		const newWorkoutExerciseResult = await newWorkoutExercise.save();
 
 		// Update the workout with the new exercise
-		workout.exercises.push(newWorkoutExerciseResult._id);
+		workout.workoutExercises.push(newWorkoutExerciseResult._id);
 		const workoutResult = await workout.save();
 
 		return res.json({ success: true, result: newWorkoutExerciseResult });
+	} catch (error) {
+		return res
+			.status(400)
+			.json({ success: false, error: error.toString() });
+	}
+};
+
+module.exports.delete = async (req, res) => {
+	try {
+		const workoutExercise = await WorkoutExercise.findById(req.params.id);
+		if (!workoutExercise) {
+			return res.json({
+				success: false,
+				result: `WorkoutExercise does not exist.`,
+			});
+		}
+
+		const result = await WorkoutExercise.deleteOne({
+			_id: workoutExercise._id,
+		});
+
+		return res.json({ success: true, result });
 	} catch (error) {
 		return res
 			.status(400)
