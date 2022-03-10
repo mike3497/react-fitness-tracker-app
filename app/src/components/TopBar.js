@@ -1,10 +1,13 @@
 import React from 'react';
 import './TopBar.css';
 
-function TopBar() {
+function TopBar(props) {
 	return (
 		<div className="top-bar">
-			<h3>Fitness Tracker</h3>
+			<div className="top-bar__body">
+				<h3>Fitness Tracker</h3>
+				<div className="top-bar__right-align">{props.children}</div>
+			</div>
 		</div>
 	);
 }

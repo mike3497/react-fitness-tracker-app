@@ -4,12 +4,18 @@
 	left: 0;
 	right: 0;
 	top: 0;
+	width: 100%;
 	height: 62px;
+}
+
+.top-bar__body {
+	padding-left: 12px;
+	padding-right: 12px;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 }
 
-.top-bar h3 {
-	margin-left: 12px;
+.top-bar__right-align {
+	margin-left: auto;
 }
