@@ -9,10 +9,8 @@ const workout = mongoose.Schema(
 		endTime: {
 			type: Date,
 		},
-		exercises: {
-			type: [
-				{ type: mongoose.Schema.ObjectId, ref: 'Workout-Line-Item' },
-			],
+		workoutExercises: {
+			type: [{ type: mongoose.Schema.ObjectId, ref: 'Workout-Exercise' }],
 		},
 		inProgress: {
 			type: Boolean,

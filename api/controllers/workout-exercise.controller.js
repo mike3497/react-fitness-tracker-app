@@ -1,4 +1,4 @@
-const WorkoutLineItem = require('../models/workout-line-item.model');
+const WorkoutExercise = require('../models/workout-exercise.model');
 const Workout = require('../models/workout.model');
 const Exercise = require('../models/exercise.model');
 const Set = require('../models/set.model');
@@ -26,27 +26,27 @@ module.exports.addExercise = async (req, res) => {
 		}
 
 		// Find workout line item with that exercise
-		const workoutLineItem = await WorkoutLineItem.findOne({
+		const workoutExercise = await WorkoutExercise.findOne({
 			exercise: exerciseId,
 		});
 
-		if (workoutLineItem) {
+		if (workoutExercise) {
 			return res.json({
 				success: false,
-				result: `WorkoutLineItem already exists with that exercise.`,
+				result: `WorkoutExercise already exists with that exercise.`,
 			});
 		}
 
-		const newWorkoutLineItem = new WorkoutLineItem({
+		const newWorkoutExercise = new WorkoutExercise({
 			exercise: exerciseId,
 		});
-		const newWorkoutLineItemResult = await newWorkoutLineItem.save();
+		const newWorkoutExerciseResult = await newWorkoutExercise.save();
 
 		// Update the workout with the new exercise
-		workout.exercises.push(newWorkoutLineItemResult._id);
+		workout.exercises.push(newWorkoutExerciseResult._id);
 		const workoutResult = await workout.save();
 
-		return res.json({ success: true, newWorkoutLineItemResult });
+		return res.json({ success: true, result: newWorkoutExerciseResult });
 	} catch (error) {
 		return res
 			.status(400)

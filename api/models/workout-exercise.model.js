@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const workoutLineItem = mongoose.Schema(
+const workoutExercise = mongoose.Schema(
 	{
 		exercise: {
 			type: mongoose.Schema.ObjectId,
@@ -14,4 +14,4 @@ const workoutLineItem = mongoose.Schema(
 	{ timestamps: true }
 );
 
-module.exports = mongoose.model('Workout-Line-Item', workoutLineItem);
+module.exports = mongoose.model('Workout-Exercise', workoutExercise);

@@ -1,6 +1,6 @@
 const Set = require('../models/set.model');
 const Workout = require('../models/workout.model');
-const WorkoutLineItem = require('../models/workout-line-item.model');
+const WorkoutExercise = require('../models/workout-exercise.model');
 const Exercise = require('../models/exercise.model');
 
 module.exports.addSet = async (req, res) => {
@@ -17,14 +17,14 @@ module.exports.addSet = async (req, res) => {
 
 		// Find workout line item with that exercise
 		const exerciseId = req.params.exerciseId;
-		const workoutLineItem = await WorkoutLineItem.findOne({
+		const workoutExercise = await WorkoutExercise.findOne({
 			exercise: exerciseId,
 		});
 
-		if (!workoutLineItem) {
+		if (!workoutExercise) {
 			return res.json({
 				success: false,
-				result: `WorkoutLineItem does not exist with that exercise.`,
+				result: `WorkoutExercise does not exist with that exercise.`,
 			});
 		}
 
@@ -36,10 +36,10 @@ module.exports.addSet = async (req, res) => {
 		const setResult = await set.save();
 
 		// Update workout line item with set Id
-		workoutLineItem.sets.push(setResult._id);
-		const workoutLineItemResult = await workoutLineItem.save();
+		workoutExercise.sets.push(setResult._id);
+		const workoutExerciseResult = await workoutExercise.save();
 
-		return res.json({ success: true, workoutLineItemResult });
+		return res.json({ success: true, result: workoutExerciseResult });
 	} catch (error) {
 		return res
 			.status(400)
