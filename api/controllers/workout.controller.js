@@ -14,7 +14,7 @@ module.exports.getAll = async (req, res) => {
 
 module.exports.getDetails = async (req, res) => {
 	try {
-		const workout = await Workout.findOne({ _id: req.params.id }).populate({
+		const result = await Workout.findOne({ _id: req.params.id }).populate({
 			path: 'workoutExercises',
 			populate: [
 				{
@@ -24,12 +24,19 @@ module.exports.getDetails = async (req, res) => {
 					},
 				},
 				{
-					path: 'workoutSets',
+					path: 'exerciseSets',
 				},
 			],
 		});
 
-		return res.json({ success: true, result: workout });
+		if (!result) {
+			return res.json({
+				success: false,
+				result: `Workout does not exist.`,
+			});
+		}
+
+		return res.json({ success: true, result });
 	} catch (error) {
 		return res
 			.status(400)

@@ -2,7 +2,7 @@ const WorkoutExercise = require('../models/workout-exercise.model');
 const Workout = require('../models/workout.model');
 const Exercise = require('../models/exercise.model');
 
-module.exports.addExercise = async (req, res) => {
+module.exports.add = async (req, res) => {
 	try {
 		// Find workout
 		const workoutId = req.params.workoutId;
