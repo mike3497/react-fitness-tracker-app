@@ -14,7 +14,7 @@ function Home() {
 
 	const handleStartWorkout = () => {
 		axios
-			.post('http://localhost:8080/api/workouts/startWorkout')
+			.post('http://localhost:8080/api/workouts/start')
 			.then((response) => {
 				const data = response.data;
 

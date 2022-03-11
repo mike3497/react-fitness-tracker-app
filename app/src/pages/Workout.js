@@ -16,7 +16,7 @@ function Workout() {
 	const handleFinish = () => {
 		axios
 			.post(
-				`http://localhost:8080/api/workouts/stopWorkout/${context.workoutId}`
+				`http://localhost:8080/api/workouts/stop/${context.workoutId}`
 			)
 			.then((response) => {
 				const data = response.data;

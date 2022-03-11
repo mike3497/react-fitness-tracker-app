@@ -7,11 +7,9 @@ function WorkoutList() {
 	const [workouts, setWorkouts] = useState([]);
 
 	useEffect(() => {
-		axios
-			.get('http://localhost:8080/api/workouts/getAll')
-			.then((response) => {
-				setWorkouts(response.data);
-			});
+		axios.get('http://localhost:8080/api/workouts').then((response) => {
+			setWorkouts(response.data.result);
+		});
 	}, []);
 
 	return (

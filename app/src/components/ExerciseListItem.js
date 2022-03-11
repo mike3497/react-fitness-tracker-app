@@ -15,7 +15,7 @@ function ExerciseListItem(props) {
 
 		axios
 			.post(
-				`http://localhost:8080/api/workoutLineItems/addExercise/${context.workoutId}/${exerciseId}`
+				`http://localhost:8080/api/workout-exercises/${context.workoutId}/${exerciseId}`
 			)
 			.then((response) => {
 				if (response.data.success) {
