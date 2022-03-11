@@ -42,7 +42,7 @@ function Workout() {
 					<i className="fa-solid fa-flag-checkered"></i> Finish
 				</Button>
 			</TopBar>
-			<main className="content-body">
+			<main className="content-body container">
 				<WorkoutExerciseList />
 			</main>
 			<BottomBar>
