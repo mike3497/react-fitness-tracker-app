@@ -1,7 +1,7 @@
 import React from 'react';
 
-function WorkoutLineItemList() {
+function WorkoutExerciseList() {
 	return <div>WorkoutLineItemList</div>;
 }
 
-export default WorkoutLineItemList;
+export default WorkoutExerciseList;

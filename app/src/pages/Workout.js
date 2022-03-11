@@ -7,7 +7,7 @@ import BottomBar from '../components/BottomBar';
 import TopBar from '../components/TopBar';
 import Button from '../components/ui/Button';
 import ButtonFullWidth from '../components/ui/ButtonFullWidth';
-import WorkoutLineItemList from '../components/WorkoutLineItemList';
+import WorkoutExerciseList from '../components/WorkoutExerciseList';
 
 function Workout() {
 	const context = useContext(AppContext);
@@ -43,7 +43,7 @@ function Workout() {
 				</Button>
 			</TopBar>
 			<main className="content-body">
-				<WorkoutLineItemList />
+				<WorkoutExerciseList />
 			</main>
 			<BottomBar>
 				<ButtonFullWidth onClick={handleAddExercise}>
