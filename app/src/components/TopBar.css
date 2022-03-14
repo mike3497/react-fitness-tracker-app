@@ -12,6 +12,10 @@
 	padding: 22px 0px;
 }
 
+.top-bar__link {
+	text-decoration: none;
+}
+
 .top-bar__body {
 	padding-left: 12px;
 	padding-right: 12px;
