@@ -5,54 +5,29 @@
 	margin-bottom: 12px;
 }
 
+.workout-exercise-list-item__header-row,
+.workout-exercise-list-item__set-row {
+	width: 100%;
+	display: flex;
+}
+.workout-exercise-list-item__set-column {
+	flex: 1 0;
+}
+.workout-exercise-list-item__reps-column {
+	flex: 1 0;
+	padding: 0px 2px;
+}
+.workout-exercise-list-item__weight-column {
+	flex: 1 0;
+	padding: 0px 2px;
+}
+.workout-exercise-list-item__buttons-column {
+	width: 98px;
+}
+
 .workout-exercise-list-item__header {
 	text-align: center;
 	padding: 0;
 	margin: 0px 0px 8px 0px;
 	font-weight: bold;
-}
-
-.workout-exercise-list-item__set-number {
-	text-align: center;
-}
-
-.workout-exercise-list-item__input {
-	width: 100%;
-	font-size: 14px;
-	line-height: 14px;
-	padding: 16px 0px;
-	text-align: center;
-	border: none;
-	border-radius: 24px;
-	background-color: #e9ecef;
-}
-
-.workout-exercise-list-item__button {
-	width: 46px;
-	height: 46px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border: none;
-	border-radius: 50%;
-	text-decoration: none;
-	margin-left: auto;
-}
-
-.workout-exercise-list-item__button:hover {
-	filter: brightness(80%);
-}
-
-.workout-exercise-list-item__button i {
-	font-size: 14px;
-	line-height: 1em;
-	color: white;
-}
-
-.workout-exercise-list-item__button--save {
-	background-color: #fdca40;
-}
-
-.workout-exercise-list-item__button--delete {
-	background-color: #f35b04;
 }

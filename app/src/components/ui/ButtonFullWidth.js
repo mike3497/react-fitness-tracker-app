@@ -7,6 +7,7 @@ function ButtonFullWidth(props) {
 			className="button-full-width"
 			type="button"
 			onClick={props.onClick}
+			disabled={props.disabled}
 		>
 			{props.children}
 		</button>

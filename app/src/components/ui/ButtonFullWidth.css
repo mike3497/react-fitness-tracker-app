@@ -14,3 +14,8 @@
 	background-color: #2956bf;
 	cursor: pointer;
 }
+
+.button-full-width:disabled {
+	pointer-events: none;
+	opacity: 0.65;
+}

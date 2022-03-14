@@ -1,13 +1,22 @@
 import React from 'react';
 import WorkoutExerciseListItem from './WorkoutExerciseListItem';
 
-function WorkoutExerciseList() {
+function WorkoutExerciseList(props) {
+	const workoutExercises = props.workoutExercises;
+
 	return (
-		<div>
-			<WorkoutExerciseListItem />
-			<WorkoutExerciseListItem />
-			<WorkoutExerciseListItem />
-		</div>
+		<React.Fragment>
+			{workoutExercises
+				? workoutExercises.map((workoutExercise) => {
+						return (
+							<WorkoutExerciseListItem
+								key={workoutExercise._id}
+								workoutExercise={workoutExercise}
+							/>
+						);
+				  })
+				: 'Loading...'}
+		</React.Fragment>
 	);
 }
 

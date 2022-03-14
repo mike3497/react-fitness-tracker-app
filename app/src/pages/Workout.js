@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './Workout.css';
 import AppContext from '../store/app-context';
 import { useNavigate } from 'react-router-dom';
@@ -12,6 +12,18 @@ import WorkoutExerciseList from '../components/WorkoutExerciseList';
 function Workout() {
 	const context = useContext(AppContext);
 	let navigate = useNavigate();
+
+	const [workout, setWorkout] = useState({});
+
+	useEffect(() => {
+		axios
+			.get(
+				`http://localhost:8080/api/workouts/details/${context.workoutId}`
+			)
+			.then((response) => {
+				setWorkout(response.data.result);
+			});
+	}, []);
 
 	const handleFinish = () => {
 		axios
@@ -43,7 +55,9 @@ function Workout() {
 				</Button>
 			</TopBar>
 			<main className="content-body container">
-				<WorkoutExerciseList />
+				<WorkoutExerciseList
+					workoutExercises={workout.workoutExercises}
+				/>
 			</main>
 			<BottomBar>
 				<ButtonFullWidth onClick={handleAddExercise}>
