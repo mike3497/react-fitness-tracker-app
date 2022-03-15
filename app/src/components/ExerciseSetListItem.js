@@ -11,7 +11,7 @@ function ExerciseSetListItem(props) {
 	const [weight, setWeight] = useState(exerciseSet.weight);
 
 	const handleSaveExerciseSet = (e) => {
-		const exerciseSetId = e.currentTarget.dataset.exerciseSetId;
+		const exerciseSetId = exerciseSet._id;
 		setDisableSaveButton(true);
 
 		const body = {
@@ -36,7 +36,7 @@ function ExerciseSetListItem(props) {
 	};
 
 	const handleDeleteExerciseSet = (e) => {
-		const exerciseSetId = e.currentTarget.dataset.exerciseSetId;
+		const exerciseSetId = exerciseSet._id;
 		setDisableDeleteButton(true);
 
 		axios
@@ -79,7 +79,6 @@ function ExerciseSetListItem(props) {
 					type="button"
 					onClick={handleSaveExerciseSet}
 					disabled={disableSaveButton}
-					data-exercise-set-id={exerciseSet._id}
 				>
 					<i className="fa-solid fa-floppy-disk"></i>
 				</button>
@@ -88,7 +87,6 @@ function ExerciseSetListItem(props) {
 					type="button"
 					onClick={handleDeleteExerciseSet}
 					disabled={disableDeleteButton}
-					data-exercise-set-id={exerciseSet._id}
 				>
 					<i className="fa-solid fa-trash-can"></i>
 				</button>

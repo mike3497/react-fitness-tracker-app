@@ -11,7 +11,7 @@ function ExerciseListItem(props) {
 	const exercise = props.exercise;
 
 	const handleAddExercise = (e) => {
-		const exerciseId = e.currentTarget.dataset.exerciseId;
+		const exerciseId = exercise._id;
 
 		axios
 			.post(
@@ -39,7 +39,6 @@ function ExerciseListItem(props) {
 				className="exercise-list-item__button"
 				type="button"
 				onClick={handleAddExercise}
-				data-exercise-id={exercise._id}
 			>
 				<i className="fa-solid fa-plus"></i>
 			</button>

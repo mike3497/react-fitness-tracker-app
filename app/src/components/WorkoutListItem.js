@@ -11,7 +11,7 @@ function WorkoutListItem(props) {
 	const formattedDate = new Date(workout.startTime).toDateString();
 
 	const handleGoToWorkout = (e) => {
-		const workoutId = e.currentTarget.dataset.workoutId;
+		const workoutId = workout._id;
 		context.changeWorkoutId(workoutId);
 		navigate('/workout');
 	};
@@ -70,7 +70,6 @@ function WorkoutListItem(props) {
 					className="workout-list-item__button"
 					type="button"
 					onClick={handleGoToWorkout}
-					data-workout-id={workout._id}
 				>
 					<i className="fa-solid fa-chevron-right"></i>
 				</button>
@@ -81,7 +80,6 @@ function WorkoutListItem(props) {
 					className="workout-list-item__button"
 					type="button"
 					onClick={handleGoToWorkout}
-					data-workout-id={workout._id}
 				>
 					<i className="fa-solid fa-eye"></i>
 				</button>
