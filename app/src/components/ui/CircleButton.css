@@ -1,0 +1,23 @@
+.circle-button__button {
+	width: 46px;
+	height: 46px;
+	border: none;
+	border-radius: 50%;
+	text-decoration: none;
+}
+
+.circle-button__button:hover {
+	filter: brightness(80%);
+	cursor: pointer;
+}
+
+.circle-button__button:disabled {
+	pointer-events: none;
+	opacity: 0.65;
+}
+
+.circle-button__button i {
+	font-size: 14px;
+	line-height: 1em;
+	color: white;
+}

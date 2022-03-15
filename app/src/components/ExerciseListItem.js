@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import './ExerciseListItem.css';
+import CircleButton from '../components/ui/CircleButton';
 import AppContext from '../store/app-context';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -35,13 +36,12 @@ function ExerciseListItem(props) {
 				</p>
 			</div>
 
-			<button
-				className="exercise-list-item__button"
-				type="button"
+			<CircleButton
 				onClick={handleAddExercise}
+				style={{ backgroundColor: '#3772ff', marginLeft: 'auto' }}
 			>
 				<i className="fa-solid fa-plus"></i>
-			</button>
+			</CircleButton>
 		</div>
 	);
 }

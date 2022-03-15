@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ExerciseSetListItem.css';
 import axios from 'axios';
+import CircleButton from './ui/CircleButton';
 
 function ExerciseSetListItem(props) {
 	const exerciseSet = props.exerciseSet;
@@ -74,22 +75,20 @@ function ExerciseSetListItem(props) {
 				/>
 			</div>
 			<div className="exercise-set-list-item__buttons-column">
-				<button
-					className="exercise-set-list-item__button exercise-set-list-item__button--save"
-					type="button"
+				<CircleButton
 					onClick={handleSaveExerciseSet}
 					disabled={disableSaveButton}
+					style={{ backgroundColor: '#fdca40', marginLeft: '2px' }}
 				>
 					<i className="fa-solid fa-floppy-disk"></i>
-				</button>
-				<button
-					className="exercise-set-list-item__button exercise-set-list-item__button--delete"
-					type="button"
+				</CircleButton>
+				<CircleButton
 					onClick={handleDeleteExerciseSet}
 					disabled={disableDeleteButton}
+					style={{ backgroundColor: '#f35b04', marginLeft: '4px' }}
 				>
 					<i className="fa-solid fa-trash-can"></i>
-				</button>
+				</CircleButton>
 			</div>
 		</div>
 	);

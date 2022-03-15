@@ -7,6 +7,7 @@ import BottomBar from '../components/BottomBar';
 import TopBar from '../components/TopBar';
 import Button from '../components/ui/Button';
 import ButtonFullWidth from '../components/ui/ButtonFullWidth';
+import CircleButton from '../components/ui/CircleButton';
 import WorkoutExerciseList from '../components/WorkoutExerciseList';
 
 function Workout() {
@@ -74,28 +75,28 @@ function Workout() {
 	return (
 		<div>
 			<TopBar>
-				<button
-					className="workout__button workout__button--delete"
-					type="button"
+				<CircleButton
 					onClick={handleDeleteWorkout}
+					style={{ backgroundColor: '#f35b04' }}
 				>
 					<i className="fa-solid fa-trash-can"></i>
-				</button>
-				<button
-					className="workout__button workout__button--back"
-					type="button"
+				</CircleButton>
+				<CircleButton
 					onClick={handleGoBack}
+					style={{ backgroundColor: '#fdca40', marginLeft: '4px' }}
 				>
 					<i class="fa-solid fa-chevron-left"></i>
-				</button>
+				</CircleButton>
 				{workout.inProgress && (
-					<button
-						className="workout__button workout__button--finish"
-						type="button"
+					<CircleButton
 						onClick={handleFinishWorkout}
+						style={{
+							backgroundColor: '#3772ff',
+							marginLeft: '4px',
+						}}
 					>
 						<i class="fa-solid fa-flag-checkered"></i>
-					</button>
+					</CircleButton>
 				)}
 			</TopBar>
 			<main className="content-body container">

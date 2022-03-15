@@ -18,27 +18,3 @@
 	margin: 0px;
 	padding: 0px;
 }
-
-.workout-list-item__button {
-	width: 46px;
-	height: 46px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background-color: #3772ff;
-	border: none;
-	border-radius: 50%;
-	text-decoration: none;
-	margin-left: auto;
-}
-
-.workout-list-item__button:hover {
-	filter: brightness(80%);
-	cursor: pointer;
-}
-
-.workout-list-item__button i {
-	font-size: 14px;
-	line-height: 1em;
-	color: white;
-}

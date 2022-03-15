@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import './WorkoutListItem.css';
 import AppContext from '../store/app-context';
 import { useNavigate } from 'react-router-dom';
+import CircleButton from './ui/CircleButton';
 
 function WorkoutListItem(props) {
 	const context = useContext(AppContext);
@@ -65,25 +66,15 @@ function WorkoutListItem(props) {
 				)}
 			</div>
 
-			{workout.inProgress && (
-				<button
-					className="workout-list-item__button"
-					type="button"
-					onClick={handleGoToWorkout}
-				>
+			<CircleButton
+				onClick={handleGoToWorkout}
+				style={{ backgroundColor: '#3772ff', marginLeft: 'auto' }}
+			>
+				{workout.inProgress && (
 					<i className="fa-solid fa-chevron-right"></i>
-				</button>
-			)}
-
-			{!workout.inProgress && (
-				<button
-					className="workout-list-item__button"
-					type="button"
-					onClick={handleGoToWorkout}
-				>
-					<i className="fa-solid fa-eye"></i>
-				</button>
-			)}
+				)}
+				{!workout.inProgress && <i className="fa-solid fa-eye"></i>}
+			</CircleButton>
 		</div>
 	);
 }
