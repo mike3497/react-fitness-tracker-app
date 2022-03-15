@@ -85,7 +85,7 @@ function Workout() {
 					onClick={handleGoBack}
 					style={{ backgroundColor: '#fdca40', marginLeft: '4px' }}
 				>
-					<i class="fa-solid fa-chevron-left"></i>
+					<i className="fa-solid fa-chevron-left"></i>
 				</CircleButton>
 				{workout.inProgress && (
 					<CircleButton
@@ -95,7 +95,7 @@ function Workout() {
 							marginLeft: '4px',
 						}}
 					>
-						<i class="fa-solid fa-flag-checkered"></i>
+						<i className="fa-solid fa-flag-checkered"></i>
 					</CircleButton>
 				)}
 			</TopBar>
