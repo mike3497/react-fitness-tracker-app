@@ -10,6 +10,10 @@
 	width: 100%;
 }
 
+.button-full-width i {
+	color: white;
+}
+
 .button-full-width:hover {
 	background-color: #2956bf;
 	cursor: pointer;
