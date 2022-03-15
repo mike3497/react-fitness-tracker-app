@@ -1,3 +1,36 @@
 .workout__body {
 	padding-top: 62px;
 }
+
+.workout__button {
+	width: 46px;
+	height: 46px;
+	border: none;
+	border-radius: 50%;
+	text-decoration: none;
+}
+
+.workout__button:hover {
+	filter: brightness(80%);
+	cursor: pointer;
+}
+
+.workout__button i {
+	font-size: 14px;
+	line-height: 1em;
+	color: white;
+}
+
+.workout__button--delete {
+	background-color: #f35b04;
+	margin-right: 4px;
+}
+
+.workout__button--back {
+	background-color: #fdca40;
+	margin-right: 4px;
+}
+
+.workout__button--finish {
+	background-color: #3772ff;
+}
