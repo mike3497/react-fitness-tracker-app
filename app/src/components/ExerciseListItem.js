@@ -4,6 +4,7 @@ import CircleButton from '../components/ui/CircleButton';
 import AppContext from '../store/app-context';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { COLORS } from '../colors';
 
 function ExerciseListItem(props) {
 	const context = useContext(AppContext);
@@ -38,7 +39,7 @@ function ExerciseListItem(props) {
 
 			<CircleButton
 				onClick={handleAddExercise}
-				style={{ backgroundColor: '#3772ff', marginLeft: 'auto' }}
+				style={{ backgroundColor: COLORS.blue, marginLeft: 'auto' }}
 			>
 				<i className="fa-solid fa-plus"></i>
 			</CircleButton>

@@ -9,6 +9,7 @@ import Button from '../components/ui/Button';
 import ButtonFullWidth from '../components/ui/ButtonFullWidth';
 import CircleButton from '../components/ui/CircleButton';
 import WorkoutExerciseList from '../components/WorkoutExerciseList';
+import { COLORS } from '../colors';
 
 function Workout() {
 	const context = useContext(AppContext);
@@ -77,13 +78,13 @@ function Workout() {
 			<TopBar>
 				<CircleButton
 					onClick={handleDeleteWorkout}
-					style={{ backgroundColor: '#f35b04' }}
+					style={{ backgroundColor: COLORS.orange }}
 				>
 					<i className="fa-solid fa-trash-can"></i>
 				</CircleButton>
 				<CircleButton
 					onClick={handleGoBack}
-					style={{ backgroundColor: '#fdca40', marginLeft: '4px' }}
+					style={{ backgroundColor: COLORS.yellow, marginLeft: '4px' }}
 				>
 					<i className="fa-solid fa-chevron-left"></i>
 				</CircleButton>
@@ -91,7 +92,7 @@ function Workout() {
 					<CircleButton
 						onClick={handleFinishWorkout}
 						style={{
-							backgroundColor: '#3772ff',
+							backgroundColor: COLORS.blue,
 							marginLeft: '4px',
 						}}
 					>

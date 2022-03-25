@@ -3,6 +3,7 @@ import './ExerciseSetListItem.css';
 import axios from 'axios';
 import CircleButton from './ui/CircleButton';
 import Modal from './ui/Modal';
+import { COLORS } from '../colors';
 
 function ExerciseSetListItem(props) {
 	const exerciseSet = props.exerciseSet;
@@ -96,7 +97,7 @@ function ExerciseSetListItem(props) {
 						onClick={handleSaveExerciseSet}
 						disabled={disableSaveButton}
 						style={{
-							backgroundColor: '#fdca40',
+							backgroundColor: COLORS.yellow,
 							marginLeft: '2px',
 						}}
 					>
@@ -106,7 +107,7 @@ function ExerciseSetListItem(props) {
 						onClick={handleOpenModal}
 						disabled={disableDeleteButton}
 						style={{
-							backgroundColor: '#f35b04',
+							backgroundColor: COLORS.orange,
 							marginLeft: '4px',
 						}}
 					>

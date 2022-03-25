@@ -3,6 +3,7 @@ import './WorkoutListItem.css';
 import AppContext from '../store/app-context';
 import { useNavigate } from 'react-router-dom';
 import CircleButton from './ui/CircleButton';
+import { COLORS } from '../colors';
 
 function WorkoutListItem(props) {
 	const context = useContext(AppContext);
@@ -68,7 +69,7 @@ function WorkoutListItem(props) {
 
 			<CircleButton
 				onClick={handleGoToWorkout}
-				style={{ backgroundColor: '#3772ff', marginLeft: 'auto' }}
+				style={{ backgroundColor: COLORS.blue, marginLeft: 'auto' }}
 			>
 				{workout.inProgress && (
 					<i className="fa-solid fa-chevron-right"></i>
