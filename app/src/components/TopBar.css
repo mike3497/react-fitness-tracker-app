@@ -1,5 +1,5 @@
 .top-bar {
-	background-color: #fff;
+	background-color: var(--white);
 	position: absolute;
 	left: 0;
 	right: 0;

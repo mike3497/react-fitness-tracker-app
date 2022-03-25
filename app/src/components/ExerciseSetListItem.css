@@ -26,7 +26,7 @@
 	text-align: center;
 	border: none;
 	border-radius: 24px;
-	background-color: #e9ecef;
+	background-color: var(--gray);
 }
 
 .exercise-set-list-item__button {
@@ -45,11 +45,11 @@
 .exercise-set-list-item__button i {
 	font-size: 14px;
 	line-height: 1em;
-	color: white;
+	color: var(--white);
 }
 
 .exercise-set-list-item__button--save {
-	background-color: #fdca40;
+	background-color: var(--yellow);
 	margin-right: 4px;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .exercise-set-list-item__button--delete {
-	background-color: #f35b04;
+	background-color: var(--orange);
 }
 
 .exercise-set-list-item__button--delete:disabled {

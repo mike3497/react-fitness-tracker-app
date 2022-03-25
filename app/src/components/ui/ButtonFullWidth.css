@@ -1,8 +1,8 @@
 .button-full-width {
 	border: none;
 	border-radius: 24px;
-	background-color: #3772ff;
-	color: #fff;
+	background-color: var(--blue);
+	color: var(--white);
 	font-size: 14px;
 	line-height: 14px;
 	padding: 16px 0px;
@@ -15,7 +15,7 @@
 }
 
 .button-full-width:hover {
-	background-color: #2956bf;
+	background-color: var(--darkBlue);
 	cursor: pointer;
 }
 

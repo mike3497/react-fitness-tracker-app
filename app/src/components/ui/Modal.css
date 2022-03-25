@@ -5,7 +5,7 @@
 	z-index: 10;
 	width: 100vw;
 	height: 100vh;
-	background-color: #000;
+	background-color: var(--black);
 	opacity: 0.5;
 }
 
@@ -14,21 +14,11 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	background-color: #fff;
+	background-color: var(--white);
 	border-radius: 24px;
-
 	padding: 12px;
 	z-index: 1000;
 	width: calc(100% - 24px);
-
-	/* background-color: #fff;
-	border-radius: 24px;
-	padding: 12px;
-	position: fixed;
-	top: 30vh;
-	left: 10%;
-	width: 80%;
-	z-index: 100; */
 }
 
 .modal__message {
@@ -48,7 +38,7 @@
 	padding: 16px 36px;
 	font-size: 14px;
 	font-weight: bold;
-	color: #fff;
+	color: var(--white);
 	margin: 0px 4px;
 }
 
@@ -57,15 +47,15 @@
 }
 
 .modal__button--yes {
-	background-color: #fdca40;
+	background-color: var(--yellow);
 }
 .modal__button--yes:hover {
-	background-color: #d49b02;
+	background-color: var(--darkYellow);
 }
 
 .modal__button--no {
-	background-color: #f35b04;
+	background-color: var(--orange);
 }
 .modal__button--no:hover {
-	background-color: #8c3502;
+	background-color: var(--darkOrange);
 }
