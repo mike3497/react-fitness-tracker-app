@@ -37,9 +37,11 @@ function ExerciseListItem(props) {
 				</p>
 			</div>
 
-			<CircleButton
+            <CircleButton
+                color={COLORS.blue}
+                hoverColor={COLORS.darkBlue}
 				onClick={handleAddExercise}
-				style={{ backgroundColor: COLORS.blue, marginLeft: 'auto' }}
+				style={{marginLeft: 'auto' }}
 			>
 				<i className="fa-solid fa-plus"></i>
 			</CircleButton>

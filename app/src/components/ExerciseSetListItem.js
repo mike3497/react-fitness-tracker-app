@@ -93,23 +93,21 @@ function ExerciseSetListItem(props) {
 					/>
 				</div>
 				<div className="exercise-set-list-item__buttons-column">
-					<CircleButton
+                    <CircleButton
+                        color={COLORS.yellow}
+                        hoverColor={COLORS.darkYellow}
 						onClick={handleSaveExerciseSet}
 						disabled={disableSaveButton}
-						style={{
-							backgroundColor: COLORS.yellow,
-							marginLeft: '2px',
-						}}
+						style={{ marginLeft: '2px', }}
 					>
 						<i className="fa-solid fa-floppy-disk"></i>
 					</CircleButton>
-					<CircleButton
+                    <CircleButton
+                        color={COLORS.orange}
+                        hoverColor={COLORS.darkOrange}
 						onClick={handleOpenModal}
 						disabled={disableDeleteButton}
-						style={{
-							backgroundColor: COLORS.orange,
-							marginLeft: '4px',
-						}}
+						style={{ marginLeft: '4px', }}
 					>
 						<i className="fa-solid fa-trash-can"></i>
 					</CircleButton>

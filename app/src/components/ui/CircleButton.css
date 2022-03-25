@@ -7,7 +7,6 @@
 }
 
 .circle-button__button:hover {
-	filter: brightness(80%);
 	cursor: pointer;
 }
 
@@ -19,5 +18,5 @@
 .circle-button__button i {
 	font-size: 14px;
 	line-height: 1em;
-	color: white;
+	color: var(--white);
 }

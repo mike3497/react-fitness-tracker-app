@@ -67,9 +67,11 @@ function WorkoutListItem(props) {
 				)}
 			</div>
 
-			<CircleButton
+            <CircleButton
+                color={COLORS.blue}
+                hoverColor={COLORS.darkBlue}
 				onClick={handleGoToWorkout}
-				style={{ backgroundColor: COLORS.blue, marginLeft: 'auto' }}
+				style={{ marginLeft: 'auto' }}
 			>
 				{workout.inProgress && (
 					<i className="fa-solid fa-chevron-right"></i>

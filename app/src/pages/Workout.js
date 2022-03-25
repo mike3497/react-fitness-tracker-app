@@ -76,25 +76,27 @@ function Workout() {
 	return (
 		<div>
 			<TopBar>
-				<CircleButton
+                <CircleButton
+                    color={COLORS.orange}
+                    hoverColor={COLORS.darkOrange}
 					onClick={handleDeleteWorkout}
-					style={{ backgroundColor: COLORS.orange }}
 				>
 					<i className="fa-solid fa-trash-can"></i>
 				</CircleButton>
-				<CircleButton
+                <CircleButton
+                    color={COLORS.yellow}
+                    hoverColor={COLORS.darkYellow}
 					onClick={handleGoBack}
-					style={{ backgroundColor: COLORS.yellow, marginLeft: '4px' }}
+					style={{ marginLeft: '4px' }}
 				>
 					<i className="fa-solid fa-chevron-left"></i>
 				</CircleButton>
 				{workout.inProgress && (
-					<CircleButton
+                    <CircleButton
+                        color={COLORS.blue}
+                        hoverColor={COLORS.darkBlue}
 						onClick={handleFinishWorkout}
-						style={{
-							backgroundColor: COLORS.blue,
-							marginLeft: '4px',
-						}}
+						style={{ marginLeft: '4px', }}
 					>
 						<i className="fa-solid fa-flag-checkered"></i>
 					</CircleButton>
