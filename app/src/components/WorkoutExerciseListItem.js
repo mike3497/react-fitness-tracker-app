@@ -3,6 +3,7 @@ import './WorkoutExerciseListItem.css';
 import ButtonFullWidth from './ui/ButtonFullWidth';
 import axios from 'axios';
 import ExerciseSetListItem from './ExerciseSetListItem';
+import { COLORS } from '../colors';
 
 function WorkoutExerciseListItem(props) {
 	const [workoutExercise, setWorkoutExercise] = useState(
@@ -86,6 +87,8 @@ function WorkoutExerciseListItem(props) {
 			))}
 
 			<ButtonFullWidth
+				color={COLORS.blue}
+				hoverColor={COLORS.darkBlue}
 				onClick={handleAddExerciseSet}
 				disabled={disableAddExerciseSetButton}
 			>

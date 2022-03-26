@@ -7,6 +7,7 @@ import TopBar from '../components/TopBar';
 import BottomBar from '../components/BottomBar';
 import ButtonFullWidth from '../components/ui/ButtonFullWidth';
 import WorkoutList from '../components/WorkoutList';
+import { COLORS } from '../colors';
 
 function Home() {
 	const context = useContext(AppContext);
@@ -36,7 +37,11 @@ function Home() {
 				<WorkoutList />
 			</main>
 			<BottomBar>
-				<ButtonFullWidth onClick={handleStartWorkout}>
+				<ButtonFullWidth
+					color={COLORS.blue}
+					hoverColor={COLORS.darkBlue}
+					onClick={handleStartWorkout}
+				>
 					<i className="fa-solid fa-person-running"></i> Start Workout
 				</ButtonFullWidth>
 			</BottomBar>

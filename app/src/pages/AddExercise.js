@@ -6,6 +6,7 @@ import BottomBar from '../components/BottomBar';
 import ButtonFullWidth from '../components/ui/ButtonFullWidth';
 import Button from '../components/ui/Button';
 import ExerciseList from '../components/ExerciseList';
+import { COLORS } from '../colors';
 
 function AddExercise() {
 	let navigate = useNavigate();
@@ -21,7 +22,11 @@ function AddExercise() {
 				<ExerciseList />
 			</main>
 			<BottomBar>
-				<ButtonFullWidth onClick={handleGoBack}>
+				<ButtonFullWidth
+					color={COLORS.blue}
+					hoverColor={COLORS.darkBlue}
+					onClick={handleGoBack}
+				>
 					<i className="fa-solid fa-chevron-left"></i> Back
 				</ButtonFullWidth>
 			</BottomBar>
